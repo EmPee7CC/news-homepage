@@ -46,7 +46,7 @@ a {
   width: 60px;
   height: 60px;
   background: url(..\assets\images\icon-menu-close.svg);
-  background-size: 30px;
+  background-size: 25px;
   background-repeat: no-repeat;
   background-position: center;
   z-index: 20;
@@ -66,6 +66,7 @@ header {
 
 header .flex {
   justify-content: space-between;
+  overflow: hidden;
 }
 
 header nav.active {
@@ -112,6 +113,7 @@ header nav ul a:hover {
 /* Showcase */
 .showcase .grid {
   grid-template-columns: 2fr 1fr;
+  overflow: hidden;
 }
 
 .showcase .showcase-content.grid {
@@ -187,7 +189,7 @@ header nav ul a:hover {
 
 /* Articles */
 .articles {
-  margin: 50px 0 30px;
+  margin: 60px 0 30px;
 }
 
 .articles .grid {
@@ -237,15 +239,13 @@ header nav ul a:hover {
 
 /* Media Queries */
 @media (max-width: 768px) {
-  .container {
-    max-width: auto;
-  }
   header nav {
     opacity: 0;
   }
 
   .toggle {
     visibility: visible;
+    overflow: auto;
     /* opacity: 1; */
   }
 
