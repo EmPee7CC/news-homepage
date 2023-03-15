@@ -23,6 +23,36 @@ a {
   text-decoration: none;
 }
 
+.toggle {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: url(/assets/images/icon-menu.svg);
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 20;
+  cursor: pointer;
+}
+
+.toggle.active {
+  visibility: visible;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: url(/assets/images/icon-menu-close.svg);
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 20;
+  cursor: pointer;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   line-height: 1.5;
@@ -38,6 +68,24 @@ header .flex {
   justify-content: space-between;
 }
 
+header nav.active {
+  height: 100vh;
+  width: 300px;
+  background-color: var(--off-white);
+  position: absolute;
+  top: 100px;
+  right: 0;
+  opacity: 1;
+  z-index: 100;
+}
+
+header nav.active ul {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100%;
+}
+
 header nav ul {
   display: flex;
 }
@@ -47,6 +95,14 @@ header nav ul a {
   padding: 10px;
   margin: 0 5px;
   font-size: 0.9rem;
+}
+
+header nav.active ul a {
+  color: var(--very-dark-blue);
+  display: block;
+  font-size: 1.1rem;
+  margin-left: 20px;
+  z-index: 100;
 }
 
 header nav ul a:hover {
@@ -181,6 +237,14 @@ header nav ul a:hover {
 
 /* Media Queries */
 @media (max-width: 768px) {
+  header nav {
+    opacity: 0;
+  }
+
+  .toggle {
+    visibility: visible;
+  }
+
   .showcase .grid {
     grid-template-columns: 1fr;
   }
