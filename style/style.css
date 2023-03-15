@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+:root {
+  --soft-orange: hsl(35, 77%, 62%);
+  --soft-red: hsl(5, 85%, 63%);
+  --off-white: hsl(36, 100%, 99%);
+  --grayish-blue: hsl(233, 8%, 79%);
+  --dark-grayish-blue: hsl(236, 13%, 42%);
+  --very-dark-blue: hsl(240, 100%, 5%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.5;
+  background-color: var(--off-white);
+}
+
+header {
+  height: 70px;
+  margin: 20px 0;
+}
+
+header .flex {
+  justify-content: space-between;
+}
+
+header nav ul {
+  display: flex;
+}
+
+header nav ul a {
+  color: var(--dark-grayish-blue);
+  padding: 10px;
+  margin: 0 5px;
+  font-size: 0.9rem;
+}
+
+header nav ul a:hover {
+  color: var(--soft-red);
+}
+
+/* Showcase */
+.showcase .grid {
+  grid-template-columns: 2fr 1fr;
+}
+
+.showcase .showcase-content.grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.showcase .showcase-image {
+  width: 100%;
+  grid-column: 1 / span 2;
+}
+
+.showcase .showcase-heading h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 0.98;
+}
+
+.showcase .showcase-paragraph p {
+  font-size: 14px;
+  color: var(--dark-grayish-blue);
+  margin-bottom: 40px;
+}
+
+.showcase .showcase-paragraph .btn:hover {
+  background-color: var(--soft-red);
+}
+
+.showcase-aside {
+  background-color: var(--very-dark-blue);
+  color: var(--off-white);
+  padding: 20px;
+}
+
+.showcase-aside.flex {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.showcase-aside h1 {
+  color: var(--soft-orange);
+  font-size: 2.2rem;
+}
+
+.showcase-aside .showcase-aside-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.showcase-aside .showcase-aside-content:not(:last-child) {
+  border-bottom: 1px solid var(--dark-grayish-blue);
+}
+
+.showcase-aside .showcase-aside-content a {
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--off-white);
+  font-size: 1.2rem;
+  margin: 10px 0;
+}
+
+.showcase-aside .showcase-aside-content a:hover {
+  color: var(--soft-orange);
+}
+
+.showcase-aside .showcase-aside-content p {
+  color: var(--grayish-blue);
+  font-size: 0.9rem;
+  font-weight: lighter;
+  margin: 0 0 10px;
+}
+
+/* Articles */
+.articles {
+  margin: 50px 0 30px;
+}
+
+.articles .grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.articles .article {
+  max-width: fit-content;
+}
+
+.articles .article.flex {
+  gap: 20px;
+}
+
+.articles .article .article-img {
+  height: 125px;
+  width: auto;
+}
+
+.articles .article .single-article {
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+}
+
+.articles .article .single-article h1 {
+  color: var(--grayish-blue);
+  margin-bottom: 5px;
+}
+
+.articles .article .single-article a {
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--very-dark-blue);
+  margin-bottom: 10px;
+}
+
+.articles .article .single-article a:hover {
+  color: var(--soft-red);
+}
+
+.articles .article .single-article p {
+  color: var(--dark-grayish-blue);
+  font-size: 0.9rem;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .showcase .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .showcase .showcase-content.grid {
+    grid-template-columns: 1fr;
+  }
+
+  .showcase .showcase-image {
+    grid-column: auto;
+  }
+
+  .showcase .showcase-heading h1 {
+    font-size: 3rem;
+  }
+
+  .showcase .showcase-paragraph p {
+    font-size: 14px;
+    color: var(--dark-grayish-blue);
+    margin-bottom: 30px;
+  }
+
+  .showcase .showcase-paragraph .btn {
+    display: inline-block;
+    margin-bottom: 30px;
+  }
+
+  .showcase-aside .showcase-aside-content a {
+    margin-top: 20px;
+  }
+
+  .showcase-aside .showcase-aside-content p {
+    color: var(--grayish-blue);
+    font-size: 0.9rem;
+    font-weight: lighter;
+    margin-bottom: 20px;
+  }
+
+  .articles .grid {
+    grid-template-columns: 1fr;
+  }
+}
